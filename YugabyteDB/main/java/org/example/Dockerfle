@@ -1,0 +1,9 @@
+FROM openjdk:latest
+
+WORKDIR /app
+
+COPY . /app
+
+RUN javac -cp postgresql.jar org/example/usersTableWrite.java
+
+CMD ["java", "-cp", ".:postgresql.jar", "org.example.usersTableWrite"]
